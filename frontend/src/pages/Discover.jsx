@@ -3,10 +3,12 @@ import React from 'react';
 
 import { Error, Loader, SongCard } from '../components';
 // import { selectGenreListId } from '../redux/features/playerSlice';
-// import { useGetSongsByGenreQuery } from '../redux/services/shazamCore';
+import { useGetTopChartsQuery } from '../redux/services/shazamCore';
 import { genres } from '../assets/constants';
 
 const Discover = () => {
+  const { data, isFetching, error } = useGetTopChartsQuery();
+
   const genreTitle = 'Pop';
   return (
     <div className="flex flex-col">
