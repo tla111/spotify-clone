@@ -16,6 +16,8 @@ const SongDetails = () => {
 
   if (isFetchingSongDetails && isFetchinRelatedSongs) return <Loader title="Searching song details" />;
 
+  if (error) return <Error />;
+
   return (
     <div className="flex flex-col">
       <DetailsHeader
